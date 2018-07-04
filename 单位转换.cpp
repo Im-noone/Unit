@@ -7,7 +7,7 @@ class unit{
 	protected:
 		string name;
 		string type;
-		double times;//Óë¹ú¼Ê±ê×¼µ¥Î»µÄ±ÈÖµ, ÊıÖµÎªa£¬±íÊ¾±ÈÖµÎª10^a£¬Ê±¼äÎª±ÈÖµ 
+		double times;//ä¸å›½é™…æ ‡å‡†å•ä½çš„æ¯”å€¼, æ•°å€¼ä¸ºaï¼Œè¡¨ç¤ºæ¯”å€¼ä¸º10^aï¼Œæ—¶é—´ä¸ºæ¯”å€¼ 
 		double value;
 	public:
 		virtual double const getValue(){
@@ -30,7 +30,7 @@ class g:public unit{
 			this->value = value;
 			this->times = -3;
 			this->type = "weight";
-			this->name = "¿Ë"; 
+			this->name = "å…‹"; 
 		}
 };
 
@@ -40,7 +40,7 @@ class kg:public unit{
 			this->value = value;
 			this->times = 0;
 			this->type = "weight";
-			this->name = "Ç§¿Ë"; 
+			this->name = "åƒå…‹"; 
 		}
 };
 
@@ -50,7 +50,7 @@ class ton:public unit{
 			this->value = value;
 			this->times = 3;
 			this->type = "weight";
-			this->name = "¶Ö"; 
+			this->name = "å¨"; 
 		}
 };
 
@@ -60,7 +60,7 @@ class mg:public unit{
 			this->value = value;
 			this->times = -6;
 			this->type = "weight";
-			this->name = "¿Ë"; 
+			this->name = "å…‹"; 
 		}
 };
 
@@ -70,7 +70,7 @@ class m:public unit{
 			this->value = value;
 			this->times = 0;
 			this->type = "length";
-			this->name = "Ã×"; 
+			this->name = "ç±³"; 
 		}
 };
 
@@ -80,7 +80,7 @@ class km:public unit{
 			this->value = value;
 			this->times = 3;
 			this->type = "length";
-			this->name = "¹«Àï"; 
+			this->name = "å…¬é‡Œ"; 
 		}
 };
 
@@ -90,7 +90,7 @@ class dm:public unit{
 			this->value = value;
 			this->times = -1;
 			this->type = "length";
-			this->name = "·ÖÃ×"; 
+			this->name = "åˆ†ç±³"; 
 		}
 };
 
@@ -100,7 +100,7 @@ class cm:public unit{
 			this->value = value;
 			this->times = -2;
 			this->type = "length";
-			this->name = "ÀåÃ×"; 
+			this->name = "å˜ç±³"; 
 		}
 };
 
@@ -110,7 +110,7 @@ class mm:public unit{
 			this->value = value;
 			this->times = -3;
 			this->type = "length";
-			this->name = "ºÁÃ×"; 
+			this->name = "æ¯«ç±³"; 
 		}
 };
 
@@ -120,7 +120,7 @@ class nm:public unit{
 			this->value = value;
 			this->times = -9;
 			this->type = "length";
-			this->name = "ÄÉÃ×"; 
+			this->name = "çº³ç±³"; 
 		}
 };
 
@@ -130,7 +130,7 @@ class s:public unit{
 			this->value = value;
 			this->times = 1/3600;
 			this->type = "time";
-			this->name = "Ãë"; 
+			this->name = "ç§’"; 
 		}
 };
 
@@ -140,7 +140,7 @@ class min:public unit{
 			this->value = value;
 			this->times = 1/60;
 			this->type = "time";
-			this->name = "·ÖÖÓ"; 
+			this->name = "åˆ†é’Ÿ"; 
 		}
 };
 
@@ -150,7 +150,7 @@ class h:public unit{
 			this->value = value;
 			this->times = 1;
 			this->type = "time";
-			this->name = "Ğ¡Ê±"; 
+			this->name = "å°æ—¶"; 
 		}
 };
 
@@ -159,6 +159,6 @@ int transform(unit a, unit b){
 		return 0;
 	}
 	else{
-		return a.getValue()/b.getValue();
+		return a.getValue()/b.getValue()*a.getTimes()/b.getTimes();
 	}
 }
